@@ -1,0 +1,107 @@
+body {
+    background-color: rgb(189, 224, 224);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
+img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 2.5rem;
+}
+
+.logo-menu {
+    width: 20%;
+    height: 20%;
+}
+
+.cabecera-menu {
+    margin-left: 5%;
+    width: auto;
+    height: auto;
+    display: inline-flex;
+    gap: 7%;
+    align-items: center;
+    max-width: 15%;
+}
+
+.cabecera-menu:hover {
+    cursor: pointer;
+}
+
+.titulo-menu {
+    width: 10rem;
+    font-family: 'Pacifico', cursive;
+    color: rgba(0,58,30,255);
+}
+
+.mensaje-bienv {
+    color: rgba(0,58,30,255);
+    font-family: 'Pacifico', cursive;
+}
+
+.barra-menu {
+    background-color: rgba(196,200,175,255) !important;
+}
+
+.contenedor {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    margin-bottom: 5%;
+}
+
+.contenedor2 {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.imgPeque {
+    display: grid;
+}
+
+.imgGran {
+    align-items: center;
+    align-content: center;
+}
+
+.color-base {
+    color: rgba(0,58,30,255);
+}
+
+.color-secun {
+    color: rgb(1, 104, 48);
+}
+
+.contenedor-texto {
+    width: 45%;
+}
+
+.contenedor-colum {
+    display: flex;
+    gap: 3rem;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.contenedor-art {
+    width: 100%;
+    padding: 5% 10%;
+    display: flex;
+    gap: 3rem;
+}
+
+.articulo {
+    text-align: center;
+    display: inline-block;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
