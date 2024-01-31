@@ -29,6 +29,8 @@ class Usuarios extends BaseController
         $modelo -> save($datos);
 
         $data['usuRegistrado']=true;
+        $session = session();
+        $session->set('username', $usuario);
         return view('templates/header', $data).view('registro_usuario').view('templates/footer');
     }
 
@@ -43,27 +45,28 @@ class Usuarios extends BaseController
         $modelo = model(UsuariosModel::class);
         $usuariosExistentes = $modelo->getUsuarios();
 
+        $usuario_ok = true;
+        $contra_ok = true;
+
         for ($i=0; $i < count($usuariosExistentes); $i++) { 
+
             if ($usuariosExistentes[$i]['usuario'] == $usuario) {
                 if ($usuariosExistentes[$i]['contraseña'] == $contra) {
                     $session->set('username', $usuario);
-                    // $session->set('contra-error', false);
-                    // $session->set('usuario-error', false);
                     return redirect()->to(base_url());
                 } else {
                     $session->set('contra-error', true);
-                    return redirect()->to(base_url().'usuarios/iniciar');
+                    $contra_ok = false;
                 }
             } else {
                 $session->set('usuario-error', true);
-                return redirect()->to(base_url().'usuarios/iniciar');
+                $usuario_ok = false;
             }
         }
 
-        // $modelo = model(ArticulosModel::class);
-        // $articulos = $modelo -> findAll();
-        // $data['articulos'] = $articulos;
-        // return view('templates/header', $data).view('mostrar_articulo').view('templates/footer');
+        if(!$usuario_ok || !$contra_ok) {
+            return redirect()->to(base_url().'usuarios/iniciar');
+        }
     }
 
     public function iniciar() {

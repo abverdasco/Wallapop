@@ -13,4 +13,11 @@ class UsuariosModel extends Model
     {
         return $this->findAll();
     }
+
+    public function getUnUsuario($usuario, $contra)
+    {
+        $this->where('usuario',$usuario);
+        $this->where('contraseña',$contra);
+        return $this->first();
+    }
 }
