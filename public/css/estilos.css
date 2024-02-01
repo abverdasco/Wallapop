@@ -94,9 +94,10 @@ img {
 
 .contenedor-art {
     width: 100%;
-    padding: 5% 10%;
-    display: flex;
-    gap: 3rem;
+    position: relative;
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: auto;
 }
 
 .articulo {
@@ -104,4 +105,5 @@ img {
     display: inline-block;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 3%;
 }
